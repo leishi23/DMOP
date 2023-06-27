@@ -30,20 +30,21 @@
 - `source_function` folder is about the source code of the basic functions like `forward_dynamics.py`
 - `source_motion` folder is about source motions which can be combined to form a task, including `approach`, `impact`, `rolling`, `sticking`, `grasping`
 - `combined_motion` folder is about specific task achieved by combining different source motions.
+- `data` folder is about the generated data of different motions. `images` folder is to store the images used in this README.md file.
 - Repo structure:
-  ![image](structure.png)
+  ![image](images/structure.png)
 
 - Demo of each source motion:
   - approach stage: to make robot approach the object in both position and orientation (blue is the object, yellow is the robot)
-    ![image](approach.gif)
+    ![image](images/approach.gif)
   - impact stage: to make robot impact the object 
-    ![image](impact.gif)
+    ![image](images/impact.gif)
   - rolling stage: to utilize robot to roll the object to a desired orientation
-    ![image](rolling.gif)
+    ![image](images/rolling.gif)
   - sticking stage: to make object stick to the robot end effector and move to a desired position and orientation
-    ![image](sticking.gif)
+    ![image](images/sticking.gif)
   - grasping stage: to make robot grasp the object, this demo is a fixed grasp, but the code can also support a moving grasp
-    ![image](grasping.gif)
+    ![image](images/grasping.gif)
 
 <!-- ## Download
 
