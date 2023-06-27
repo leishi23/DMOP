@@ -27,29 +27,23 @@
 
 ## Contents
 
-- `adaptation.py`: to calculate the final time `t_f`, process force and torque `f*` and `tau*` to be applied to the object.
-  - Input: initial velocity, initial angular velocity, mass, inertia, max force vector, max torque vector, final velocity, final angular velocity
-  - Output: final time, list of force, list of torque
-- `forward_dynamics.py`: to calculate the final state (**_position/velocity/orientation/angular-velocity_**) and state of each step of the object.
-  - Input: initial state, mass, inertia, maximum force, maximum torque, ideal final velocity, ideal final angular velocity, number of steps, delta,  gravity
-  - Output: final time, final state([position/orientation/velocity/angular velocity]), state at each time step
-- `trans.py`: to transform the state from object center to contact point.
-  - Input: center state, contact point
-  - Output: contact state
-- `impact.py`: to get the object state after impact.
-    - Input: state before impact, enabled state when impact
-    - Output: object state after impact
-- `parabola.py`: to get the object state after parabola.
-    - Input: state before parabola, final time 
-    - Output: object state after parabola
-- `approach_pos.py`: to calculate the process position of robot and object. Guide the robot with object.
-  - Input: weight of robot, weight of object, robot initial position, robot initial velocity, object initial position, object initial velocity, object initial acceleration, final time 
-  - Output: process position of robot and object
-- `approach_alt.py`: to calculate the process altitude of robot and object. Guide the robot with object.
-  - Input: object's initial position/orientation/angular velocity, any given time tf_K, mass, inertia, torque_max, force_max, iterate time
-  - Output: object and robot orientation list of each step
+- `source_function` folder is about the source code of the basic functions like `forward_dynamics.py`
+- `source_motion` folder is about source motions which can be combined to form a task, including `approach`, `impact`, `rolling`, `sticking`, `grasping`
+- `combined_motion` folder is about specific task achieved by combining different source motions.
+- Repo structure:
+  ![image](structure.png)
 
-![image](https://github.com/leishi23/Dexterous-Manipulation-Online-Planning-/blob/a03ed1f43899ce9c5fd3154e3895dc781b1dbcd4/structure.png)
+- Demo of each source motion:
+  - approach stage: to make robot approach the object in both position and orientation (blue is the object, yellow is the robot)
+    ![image](approach.gif)
+  - impact stage: to make robot impact the object 
+    ![image](impact.gif)
+  - rolling stage: to utilize robot to roll the object to a desired orientation
+    ![image](rolling.gif)
+  - sticking stage: to make object stick to the robot end effector and move to a desired position and orientation
+    ![image](sticking.gif)
+  - grasping stage: to make robot grasp the object, this demo is a fixed grasp, but the code can also support a moving grasp
+    ![image](grasping.gif)
 
 <!-- ## Download
 
