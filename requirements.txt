@@ -1,0 +1,5 @@
+matplotlib==3.7.1
+mpmath==1.2.1
+numpy==1.24.3
+tqdm==4.65.0
+sympy==1.11.1
